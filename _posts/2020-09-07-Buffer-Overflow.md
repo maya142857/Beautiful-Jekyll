@@ -3,7 +3,7 @@ layout: post
 title: Buffer Overflow
 subtitle: 緩衝區溢位攻擊
 gh-repo: maya142857/ctf
-gh-badge: [star, fork, follow]
+gh-badge:[]
 tags: [pwn]
 comments: true
 ---
@@ -21,20 +21,34 @@ comments: true
 ## 解題步驟
 
 透過 gdb 觀察輸入一長串A之後的執行過程。
+
 ![](https://i.imgur.com/xgBqaWh.png)
 
+
+
 程式在 return 時發生錯誤。原因是stack上堆滿了A，原本的 return address 被覆蓋成了不合法的地址。
+
 ![](https://i.imgur.com/2xXBw1i.png)
 
 
+
 算出會從輸入的第幾個byte開始蓋到return address。
+
 ![](https://i.imgur.com/W80Ez5k.png)
 
+
+
 gets() 輸入 48 bytes (0x30)後會抵達 rbp 指的位址，rbp 指的位址還有8 bytes 的 save rbp，接下來就是return address。
+
 ![](https://i.imgur.com/XmkCqpL.png)
 
+
+
 找到qwer()的記憶體位址0x400687。構造一個 48 bytes (0x38) + qwer()記憶體位址的輸入。
+
 ![](https://i.imgur.com/UBnoXYH.png)
+
+
 
 
 ## 參考答案
@@ -43,7 +57,3 @@ gets() 輸入 48 bytes (0x30)後會抵達 rbp 指的位址，rbp 指的位址還
 ![](https://i.imgur.com/AGXlUZF.png)
 
 
-
-
-## Reference
-https://medium.com/@ktecv2000/%E7%B7%A9%E8%A1%9D%E5%8D%80%E6%BA%A2%E4%BD%8D%E6%94%BB%E6%93%8A%E4%B9%8B%E4%B8%80-buffer-overflow-83516aa80240
