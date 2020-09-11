@@ -16,6 +16,7 @@ comments: true
 * 先分析原始碼，存在 可執行任意指令的qwer()，但程式正常執行的話不會被執行到。
 * main() function使用gets() 去存取固定大小的buffer。
 * 嘗試透過 buffer overflow 改變程式流程以執行任意指令。
+
 ![](https://i.imgur.com/pNWLOXA.png)
 
 ## 解題步驟
