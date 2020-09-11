@@ -3,7 +3,7 @@ layout: post
 title: Buffer Overflow
 subtitle: 緩衝區溢位攻擊
 gh-repo: maya142857/ctf
-gh-badge:[]
+gh-badge:[gh-repo]
 tags: [pwn]
 comments: true
 ---
