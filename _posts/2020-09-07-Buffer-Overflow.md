@@ -3,7 +3,7 @@ layout: post
 title: Pwn Tutorial
 subtitle: Buffer Overflow
 gh-repo: maya142857/maya142857.github.io
-gh-badge:[star, fork, follow]
+gh-badge: [star, fork, follow]
 tags: [test]
 comments: true
 ---
